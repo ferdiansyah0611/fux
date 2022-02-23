@@ -1,0 +1,100 @@
+/*Inbox.sass*/
+@use '../var.sass' as *
+
+.inbox .left .chat, .right .member > div
+	overflow: auto
+	max-height: calc(100vh - 5.6em - 5em)
+	.item
+		@apply flex space-x-2 hover:bg-gray-800 text-sm p-2 cursor-pointer
+		p:nth-child(2)
+			@apply text-gray-300
+.inbox
+	@apply grid my-4
+	background: $secondary
+	max-height: calc(100vh - 5.6em)
+	border: 1px solid $border-secondary
+	grid-template-columns: minmax(0px, 300px) 1fr
+	@media (max-width: theme('screens.sm'))
+		grid-template-columns: repeat(1, 1fr)
+	ion-icon
+		@apply text-2xl
+	.left
+		border-right: 1px solid $border-secondary
+		// @apply flex flex-col
+		.action
+			@apply flex items-center space-x-2 p-2
+			p
+				@apply flex items-center space-x-2 flex-1 cursor-pointer justify-center
+		.choose
+			@apply flex uppercase text-gray-400
+			border: 1px solid $border-secondary
+			border-left: 0px
+			border-right: 0px
+			a
+				@apply p-2 text-sm 
+			a.active
+				@apply text-white
+				border-bottom: 1px solid $border-primary
+	.right.chat
+		@apply flex flex-col
+		.list
+			@apply flex-1
+		.input
+			@apply p-2 flex space-x-2 items-center
+			border-top: 1px solid $border-secondary
+			a
+				@apply p-2
+			textarea
+				@apply flex-1
+				outline: none
+				height: 40px
+				min-height: 40px
+				max-height: 100px
+				overflow: auto !important
+				@apply p-2
+				border: 1px solid #ffffff42
+				overflow: hidden
+				&:focus
+					outline: none
+					box-shadow: unset
+	.info
+		border-bottom: 1px solid $border-secondary
+		@apply flex items-center
+		> div
+			@apply flex items-center space-x-2 p-2
+			&:nth-child(1)
+				@apply flex-1
+			> div:nth-child(1)
+				@apply flex items-center
+				p
+					@apply font-bold
+	.right.detail
+		@apply flex flex-col
+		.content
+			.mute
+				@apply p-2 flex items-center space-x-2
+				border-bottom: 1px solid $border-secondary
+			.move
+				@apply p-2
+				border-bottom: 1px solid $border-secondary
+				button
+					@apply p-1 #{!important}
+				div
+					@apply flex
+					p
+						@apply flex-1
+			.member
+				@apply p-2
+				border-bottom: 1px solid $border-secondary
+				h5
+					@apply font-bold
+			.action
+				@apply flex flex-col
+				border-bottom: 1px solid $border-secondary
+				a
+					@apply p-2
+	.right.intro
+		@apply flex items-center justify-center text-center
+		> div
+			> *
+				@apply p-2

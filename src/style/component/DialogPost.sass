@@ -1,0 +1,26 @@
+/*DialogPost.sass*/
+@use '../var.sass' as *
+.closed-dialog
+	@apply fixed text-4xl cursor-pointer
+	top: 20px
+	right: 30px
+	z-index: 1002
+.dialog-post
+	@apply fixed left-0 top-0 w-full h-screen flex justify-center items-center md:py-20
+	z-index: 1001
+	background: #00000005
+	backdrop-filter: blur(16px) saturate(160%)
+	overflow: auto
+	> div
+		@apply flex flex-col md:flex-row flex-1
+		background: $primary
+		max-width: 900px
+		@media (max-width: theme('screens.md'))
+			margin-top: 100px
+		> *
+			@apply flex-1
+		.img
+			@apply flex items-center
+			border: 1px solid #4a4a4a
+			border-right: 0px
+			min-width: 300px

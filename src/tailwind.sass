@@ -1,0 +1,59 @@
+@use './style/var.sass' as *
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap')
+@tailwind base
+@tailwind components
+@tailwind utilities
+
+@layer components
+	.btn
+		@apply p-2
+		&.btn-primary
+			@apply bg-blue-600
+
+body
+	background: $primary
+	color: white
+	font-family: 'Noto Sans', sans-serif
+input, textarea
+	background: #202020 #{!important}
+	color: white
+img
+	width: 100%
+ion-icon
+	@apply flex
+
+.containers
+	padding: 0px 10px
+@screen md
+	.containers
+		padding: 0px 150px
+
+
+.avatar
+	@apply rounded-full
+	width: 40px
+	height: 40px
+	border: 1px solid #ffffff7d
+button.outline-profile
+		@apply p-2
+		border: 1px solid $border-primary
+
+.drop
+	@apply relative
+	& > .dropdown
+		display: none !important
+	&:focus
+		& > .dropdown
+			@apply shadow-md absolute flex flex-col #{!important}
+			z-index: 999
+			background: $secondary
+			top: 0px
+			right: 0px
+			margin-top: 45px
+			border: 1px solid #4a4a4a
+			> *
+				@apply p-2 hover:bg-gray-700
+			&.icons
+				min-width: 150px
+				a
+					@apply flex space-x-2 text-left items-center

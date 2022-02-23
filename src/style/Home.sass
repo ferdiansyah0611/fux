@@ -1,0 +1,35 @@
+.home
+	@apply grid
+	grid-template-columns: 1fr 400px
+	@media (max-width: theme('screens.sm'))
+		grid-template-columns: repeat(1, 1fr) !important
+	> div:nth-child(2)
+		.stickys
+			@apply sticky p-4
+			top: 80px
+			background: black
+			.recommend
+				.text
+					@apply flex items-center my-2
+					p:nth-child(1)
+						@apply flex-1 text-gray-400
+				ul
+					li
+						@apply flex items-center space-x-2 mt-2
+						> div:nth-child(2)
+							@apply flex-1
+						img
+							width: 40px
+							height: 40px
+						p
+							@apply text-gray-400 text-sm
+
+			.profile
+				@apply flex items-center space-x-2
+				> div:nth-child(2)
+					@apply flex-1
+				img
+					width: 60px
+					height: 60px
+				p
+					@apply text-gray-400

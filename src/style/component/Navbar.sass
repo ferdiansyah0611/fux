@@ -1,0 +1,31 @@
+/*Navbar.sass*/
+@use '../var.sass' as *
+
+nav.navbar
+	@apply sticky flex items-center w-full bg-black text-white py-2
+	border-bottom: 1px solid $border-primary
+	top: 0
+	z-index: 1000
+	ion-icon
+		@apply text-white flex text-2xl
+
+	.one
+		@apply flex-1 flex items-center
+		input::placeholder
+			@apply text-sm
+		div:nth-child(1)
+			@apply flex-1 flex
+			a
+				@apply font-bold text-2xl
+		div:nth-child(2)
+			@media (max-width: theme('screens.sm'))
+				display: none
+	.three
+		@apply flex flex-1 justify-end
+		.avatar
+			@apply rounded-full
+			width: 23px !important
+			height: 23px !important
+			border: 1px solid $border-primary
+		a, button
+			@apply p-2

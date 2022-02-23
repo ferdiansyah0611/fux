@@ -1,0 +1,70 @@
+/*ShowProfile.sass*/
+@use '../var.sass' as *
+
+.show-profile
+	.detail
+		@apply grid items-center py-8
+		grid-template-columns: minmax(0px, 200px) 1fr
+		@media (max-width: theme('screens.xl'))
+			@apply grid-cols-1 gap-4
+			// grid-template-columns: 100px 1fr
+			// @apply gap-2
+		.img
+			@apply flex justify-center
+			img
+				@apply rounded-full
+				width: 100px
+				height: 100px
+				border: 1px solid $border-primary
+		.description
+			@apply text-sm mt-4
+			a
+				@apply text-blue-600
+			p
+				&:nth-child(1)
+					@apply text-gray-400
+		.count
+			@apply flex items-center space-x-4 mt-4 text-sm
+			span
+				@apply font-bold
+		.profile
+			@apply flex items-center md:space-x-2 space-y-2 md:space-y-0 flex-wrap
+			ion-icon
+				@apply text-2xl
+			p
+				@apply pr-2 md:pr-6
+			button
+				@apply p-1 md:p-2
+
+	.posts
+		.data
+			@apply grid grid-cols-2 md:grid-cols-3 gap-4 py-4
+			.item
+				@apply relative
+				.hover
+					display: none
+				&:hover .hover
+					@apply flex justify-center
+					position: absolute
+					top: 0
+					left: 0
+					height: 100%
+					width: 100%
+					background: #2c2c2c8a
+					ion-icon
+						@apply text-xl
+					> div
+						@apply flex space-x-4
+						div
+							@apply flex items-center space-x-2
+
+		.tabs
+			@apply flex justify-center
+			border-top: 1px solid $border-primary
+			a
+				@apply p-2 flex space-x-2
+				&.active
+					border-top: 1px solid blue
+					margin-top: -1px
+				ion-icon
+					@apply text-xl

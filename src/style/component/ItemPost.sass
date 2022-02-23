@@ -1,0 +1,55 @@
+/*ItemPost.sass*/
+@use '../var.sass' as *
+$border: #4a4a4a
+.post-item
+	@apply flex-col flex
+	border: 1px solid $border
+	background: $secondary
+	ion-icon
+		@apply text-2xl flex
+	.comment
+		@apply p-2 text-sm flex-1 flex flex-col space-y-2
+		max-height: calc(100vh - 300px)
+		overflow: auto
+		border: 1px solid $border
+		border-left: 0px
+		border-right: 0px
+		> div
+			@apply flex items-center space-x-2
+			> div:nth-child(2)
+				@apply flex-1
+	.profile
+		@apply p-2 flex
+		> div
+			&:nth-child(1)
+				@apply flex-1
+			@apply flex items-center space-x-4
+	.icon
+		@apply flex p-2
+		div
+			@apply flex space-x-3
+			a
+				@apply p-0
+		> div:nth-child(1)
+			@apply flex-1
+	.description
+		@apply p-2 pt-0
+		.time
+			@apply text-xs text-gray-400 mt-2
+		p, a
+			@apply text-sm
+		span
+			@apply text-gray-200
+	.sticker
+		@apply flex p-2 items-center space-x-2
+		border-top: 1px solid $border
+		a, input
+			@apply p-2
+		input
+			@apply flex-1
+			background: $secondary !important
+			border: unset !important
+			&::placeholder
+				@apply text-sm
+			&:focus
+				box-shadow: unset !important
